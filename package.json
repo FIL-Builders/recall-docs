@@ -7,9 +7,9 @@
     "build:embeddings": "tsx scripts/embeddings.ts",
     "build:openapi": "tsx scripts/generate-openapi.ts && prettier --write \"docs/reference/**/*.mdx\"",
     "prebuild": "pnpm run build:embeddings && pnpm run build:openapi",
-    "lint:mdx": "remark 'app/**/*.{md,mdx}' --frail",
+    "lint:mdx": "remark 'docs/**/*.{md,mdx}' --frail",
     "build": "pnpm run lint:mdx && next build",
-    "dev": "pnpm run lint:mdx && pnpm run build:openapi && next dev",
+    "dev": "pnpm run build:openapi && next dev",
     "start": "next start",
     "postinstall": "fumadocs-mdx",
     "eject": "fumadocs add --config ./fumadocs.cli.json",
@@ -87,6 +87,7 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
     "globals": "^15.14.0",
+    "mdast-util-to-string": "^4.0.0",
     "postcss": "^8.5.1",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
@@ -99,6 +100,7 @@
     "tailwindcss-animate": "^1.0.7",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.22.0"
+    "typescript-eslint": "^8.22.0",
+    "unist-util-visit": "^5.0.0"
   }
 }
