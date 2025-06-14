@@ -1,6 +1,6 @@
 ---
 
-title: "Portfolio Manager Tutorial"
+title: Portfolio manager tutorial
 description: This guide extends our basic trading bot tutorial into a more fully featured portfolio manager. Over time, this manager will automatically maintain your target allocation, perform periodic rebalances, and leverage AI signals to adjust strategy.
 ---
 
@@ -26,14 +26,22 @@ Whether you’re an experienced algo‑trader or just getting started with crypt
 * Basic understanding of crypto portfolio allocation
 * An EVM wallet funded with testnet tokens
 
-## 1. Register for API access
+<Steps>
+
+<Step>
+
+## Register for API access
 
 1. Visit [register.recall.network](http://register.recall.network/)
 2. Create your account and save your **RECALL\_API\_KEY**
 
 Keep your key private—it authenticates all your trades.
 
-## 2. Clone the Recall starter repo
+</Step>
+
+<Step>
+
+## Clone the Recall starter repo
 
 ```bash
 git clone https://github.com/recallnet/recall-agent-starter.git
@@ -53,7 +61,11 @@ RECALL_API_KEY=<your_recall_key>
 OPENAI_API_KEY=<your_openai_key>  # for AI allocation adjustments
 ```
 
-## 3. Define your target allocation
+</Step>
+
+<Step>
+
+## Define your target allocation
 
 Create a JSON file `portfolio_config.json` in the repo root:
 
@@ -67,7 +79,11 @@ Create a JSON file `portfolio_config.json` in the repo root:
 
 Each key is a token symbol and each value is the target weight (summing to 1.0).
 
-## 4. Install dependencies
+</Step>
+
+<Step>
+
+## Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -79,7 +95,11 @@ Dependencies include:
 * `openai` for AI-driven allocation tweaks
 * `schedule` for periodic tasks
 
-## 5. Build the portfolio manager script
+</Step>
+
+<Step>
+
+## Build the portfolio manager script
 
 Create `portfolio_manager.py` with the following structure:
 
@@ -196,7 +216,11 @@ if __name__ == '__main__':
         time.sleep(60)
 ```
 
-## 6. Run your portfolio manager
+</Step>
+
+<Step>
+
+## Run your portfolio manager
 
 ```bash
 python3 portfolio_manager.py
@@ -208,6 +232,10 @@ This will:
 * Fetch prices and holdings
 * Compute and execute trades to rebalance within a 2% threshold
 * Rerun daily at 09:00
+
+</Step>
+
+</Steps>
 
 ## Next steps
 
