@@ -12,7 +12,6 @@
   "eslint.codeActionsOnSave.mode": "all",
   "eslint.lintTask.enable": true,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "remark-lint.configFile": ".remarkrc.js",
   "[markdown]": {
     "editor.defaultFormatter": "unifiedjs.vscode-remark"
   },
